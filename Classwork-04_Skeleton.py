@@ -61,7 +61,7 @@ class Wizard:
         self.wand = wand
         self.status = status
     
-    def describe(self):
+    def introduce(self):
         return f"Name: {self.name}, House: {self.house}, Wand: {self.wand}, Status: {self.status}"
     
 ##################################################################################################
@@ -85,7 +85,7 @@ class Character_GoT:
         self.status = status
         
     def introduce(self):
-        return f"Name: {self.name}, Title: {self.title}, House: {self.house}, Status: {self.status}"
+        return f"Name: {self.name}, Title: {self.title}, House: {self.house.name}, Status: {self.status}"
     
 ##################################################################################################
 
@@ -97,7 +97,7 @@ class Jedi:
         self.lightsaber_color = lightsaber_color
         self.status = status
     
-    def introudce(self):
+    def introduce(self):
         return f"Name: {self.name}, Rank: {self.rank}, Lightsaber Color: {self.lightsaber_color}, Status: {self.status}"
     
 ##################################################################################################
