@@ -204,7 +204,7 @@ class Superhero:
         self.superpower = superpower
         self.affiliation = affiliation
 
-    def describe(self):
+    def introduce(self):
         return f"Name: {self.name}, Alias: {self.alias}, Superpower: {self.superpower}, Affiliation: {self.affiliation}"
 
 ##################################################################################################
@@ -217,7 +217,7 @@ class Pirate:
         self.rank = rank
         self.status = status
     
-    def describe(self):
+    def introduce(self):
         return f"Name: {self.name}, Ship: {self.ship}, Rank: {self.rank}, Status: {self.status}"
 
 ##################################################################################################
