@@ -9,15 +9,49 @@ def your_ID():
 ################ -Write your code in the designated section for each problem- ####################
 ##################################################################################################
 ######## Problem 1: Breaking Bad #################################################################
+class Character_BB:
+    def __init__(self, name, alias, occupation, status):
+        self.name = name
+        self.alias = alias
+        self.occupation = occupation
+        self.status = status
 
+    def introduce(self):
+        return(f"Name: {self.name}, Alias: {self.alias}, Occupation: {self.occupation}, Status: {self.status}")
 ##################################################################################################
 
 ######## Problem 2: Lost #########################################################################
+class Island:
+    def __init__(self, name, location, mystery_level):
+        self.name = name
+        self.location = location
+        self.mystery_level = mystery_level
+
+    def describe(self):
+        return(f"Island: {self.name}, Location: {self.location}, Mystery Level: {self.mystery_level}")
+
+class Survivor:
+    def __init__(self, name, age, occupation, island):
+        self.name = name
+        self.age = age
+        self.occupation = occupation
+        self.island = island
     
+    def introduce(self):
+        return(f"Name: {self.name}, Age: {self.age}, Occupation: {self.occupation}, Island: {self.island.name}")
 ##################################################################################################
 
 ######## Problem 3: Fullmetal Alchemist ##########################################################
+class Alchemist:
+    def __init__(self, name, rank, specialty, status):
+        self.name = name
+        self.rank = rank
+        self.specialty = specialty
+        self.status = status
 
+    def introduce(self):
+        return(f"Name: {self.name}, Rank: {self.rank}, Specialty: {self.specialty}, Status: {self.status}")
+        
 ##################################################################################################
 
 ######## Problem 4: Sherlock #####################################################################
@@ -33,11 +67,25 @@ def your_ID():
 ##################################################################################################
 
 ######## Problem 7: Assassin's Creed #############################################################
-
+class Assassin:
+    def __init__(self, name, alias, era, status):
+        self.name = name
+        self.alias = alias
+        self.era = era
+        self.status = status
+    def introduce(self):
+        return f"Name: {self.name}, Alias: {self.alias}, Era: {self.era}, Status: {self.status}"
 ##################################################################################################
 
 ######## Problem 8: DOTA #########################################################################
-
+class Hero:
+    def __init__(self,name, role, primaryAttribute, faction):
+        self.name = name
+        self.role = role
+        self.primaryAttribute = primaryAttribute
+        self.faction = faction
+    def introduce(self):
+        return f"Name: {self.name}, Role: {self.role}, Primary Attribute: {self.primaryAttribute}, Faction: {self.faction}"
 ##################################################################################################
 
 ######## Problem 9: Baldur's Gate 3 ##############################################################
@@ -61,45 +109,17 @@ class Wizard:
         self.wand = wand
         self.status = status
     
-    def introduce(self):
+    def describe(self):
         return f"Name: {self.name}, House: {self.house}, Wand: {self.wand}, Status: {self.status}"
     
 ##################################################################################################
 
 ######## Problem 11: Game of Thrones #############################################################
-class House:
-    def __init__(self, name, sigil, words, region):
-        self.name = name
-        self.sigil = sigil
-        self.words = words
-        self.region = region
-        
-    def describe(self):
-        return f"House: {self.name}, Sigil: {self.sigil}, Words: {self.words}, Region: {self.region}"
-    
-class Character_GoT:
-    def __init__(self, name, title, house, status):
-        self.name = name
-        self.title = title
-        self.house = house
-        self.status = status
-        
-    def introduce(self):
-        return f"Name: {self.name}, Title: {self.title}, House: {self.house.name}, Status: {self.status}"
-    
+
 ##################################################################################################
 
 ######## Problem 12: Star Wars ###################################################################
-class Jedi:
-    def __init__(self, name, rank, lightsaber_color, status):
-        self.name = name
-        self.rank = rank
-        self.lightsaber_color = lightsaber_color
-        self.status = status
-    
-    def introduce(self):
-        return f"Name: {self.name}, Rank: {self.rank}, Lightsaber Color: {self.lightsaber_color}, Status: {self.status}"
-    
+
 ##################################################################################################
 
 ######## Problem 13: The Lord of the Rings #######################################################
@@ -115,20 +135,7 @@ class Jedi:
 ##################################################################################################
 
 ######## Problem 16: Naruto ######################################################################
-class Shinobi:
-    def __init__(self, name, rank, chakra, missions_completed):
-        self.name = name
-        self.rank = rank
-        self.chakra = chakra
-        self.missions_completed = missions_completed
-        
-    def complete_mission(self, chakra_used):
-        self.chakra -= chakra_used
-        self.missions_completed += 1
 
-    def recover_chakra(self, amount):
-        self.chakra += amount
-        
 ##################################################################################################
 
 ######## Problem 17: Doctor Who ##################################################################
