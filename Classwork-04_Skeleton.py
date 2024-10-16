@@ -54,7 +54,16 @@ class Character_BG3:
 ##################################################################################################
 
 ######## Problem 10: Harry Potter ################################################################
-
+class Wizard:
+    def __init__(self, name, house, wand, status):
+        self.name = name
+        self.house = house
+        self.wand = wand
+        self.status = status
+    
+    def describe(self):
+        return f"Name: {self.name}, House: {self.house}, Wand: {self.wand}, Status: {self.status}"
+    
 ##################################################################################################
 
 ######## Problem 11: Game of Thrones #############################################################
