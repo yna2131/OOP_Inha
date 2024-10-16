@@ -9,83 +9,59 @@ def your_ID():
 ################ -Write your code in the designated section for each problem- ####################
 ##################################################################################################
 ######## Problem 1: Breaking Bad #################################################################
-class Character_BB:
-    def __init__(self, name, alias, occupation, status):
-        self.name = name
-        self.alias = alias
-        self.occupation = occupation
-        self.status = status
 
-    def introduce(self):
-        return(f"Name: {self.name}, Alias: {self.alias}, Occupation: {self.occupation}, Status: {self.status}")
 ##################################################################################################
 
 ######## Problem 2: Lost #########################################################################
-class Island:
-    def __init__(self, name, location, mystery_level):
-        self.name = name
-        self.location = location
-        self.mystery_level = mystery_level
-
-    def describe(self):
-        return(f"Island: {self.name}, Location: {self.location}, Mystery Level: {self.mystery_level}")
-
-class Survivor:
-    def __init__(self, name, age, occupation, island):
-        self.name = name
-        self.age = age
-        self.occupation = occupation
-        self.island = island
     
-    def introduce(self):
-        return(f"Name: {self.name}, Age: {self.age}, Occupation: {self.occupation}, Island: {self.island.name}")
 ##################################################################################################
 
 ######## Problem 3: Fullmetal Alchemist ##########################################################
-class Alchemist:
-    def __init__(self, name, rank, specialty, status):
-        self.name = name
-        self.rank = rank
-        self.specialty = specialty
-        self.status = status
 
-    def introduce(self):
-        return(f"Name: {self.name}, Rank: {self.rank}, Specialty: {self.specialty}, Status: {self.status}")
-        
 ##################################################################################################
 
 ######## Problem 4: Sherlock #####################################################################
+class Detective:
+    def __init__(self,name, specialty, partner, case_count):
+        self.name = name
+        self.specialty = specialty
+        self.partner = partner
+        self.case_count = case_count
 
+    def introduce(self):
+        return f"Name: {self.name}, Specialty: {self.specialty}, Partner: {self.partner}, Case Count: {self.case_count}"
 ##################################################################################################
 
 ######## Problem 5: Death Note ###################################################################
+class User:
+    def __init__(self,name,alias,possession_of_death_note,status):
+        self.name = name
+        self.alias = alias
+        self.possession_of_death_note = possession_of_death_note
+        self.status = status
 
+    def introduce(self):
+        return f"Name: {self.name}, Alias: {self.alias}, Possession of Death Note: {self.possession_of_death_note}, Status: {self.status}"
 ##################################################################################################
 
 ######## Problem 6: Code Geass ###################################################################
+class KnightmarePilot:
+    def __init__(self,name,alias,affiliatin,rank):
+        self.name = name
+        self.alias = alias
+        self.affiliation = affiliatin
+        self.rank = rank
 
+    def introduce(self):
+        return f"Name: {self.name}, Alias: {self.alias}, Affiliation: {self.affiliation}, Rank: {self.rank}"
 ##################################################################################################
 
 ######## Problem 7: Assassin's Creed #############################################################
-class Assassin:
-    def __init__(self, name, alias, era, status):
-        self.name = name
-        self.alias = alias
-        self.era = era
-        self.status = status
-    def introduce(self):
-        return f"Name: {self.name}, Alias: {self.alias}, Era: {self.era}, Status: {self.status}"
+
 ##################################################################################################
 
 ######## Problem 8: DOTA #########################################################################
-class Hero:
-    def __init__(self,name, role, primaryAttribute, faction):
-        self.name = name
-        self.role = role
-        self.primaryAttribute = primaryAttribute
-        self.faction = faction
-    def introduce(self):
-        return f"Name: {self.name}, Role: {self.role}, Primary Attribute: {self.primaryAttribute}, Faction: {self.faction}"
+
 ##################################################################################################
 
 ######## Problem 9: Baldur's Gate 3 ##############################################################
