@@ -9,7 +9,7 @@ def your_ID():
 ################ -Write your code in the designated section for each problem- ####################
 ##################################################################################################
 ######## Problem 1: Breaking Bad #################################################################
-return "Hello"
+
 ##################################################################################################
 
 ######## Problem 2: Lost #########################################################################
@@ -90,7 +90,16 @@ class Character_GoT:
 ##################################################################################################
 
 ######## Problem 12: Star Wars ###################################################################
-
+class Jedi:
+    def __init__(self, name, rank, lightsaber_color, status):
+        self.name = name
+        self.rank = rank
+        self.lightsaber_color = lightsaber_color
+        self.status = status
+    
+    def introudce(self):
+        return f"Name: {self.name}, Rank: {self.rank}, Lightsaber Color: {self.lightsaber_color}, Status: {self.status}"
+    
 ##################################################################################################
 
 ######## Problem 13: The Lord of the Rings #######################################################
