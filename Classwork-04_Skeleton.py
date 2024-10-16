@@ -46,7 +46,11 @@ class Character_BG3:
         self.name = name
         self.race = race
         self.class_type = class_type
-        self.ali
+        self.alignment = alignment
+        
+    def introduce(self):
+        return f"Name: {self.name}, Race: {self.race}, Class Type: {self.class_type}, Alignment: {self.alignment}"
+    
 ##################################################################################################
 
 ######## Problem 10: Harry Potter ################################################################
