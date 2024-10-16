@@ -181,7 +181,7 @@ class Race:
         self.characteristics = characteristics
     
     def describe(self):
-        return f"Race: {self.race}, Homeland: {self.homeland}, Characteristics: {self.characteristics}"
+        return f"Race: {self.name}, Homeland: {self.homeland}, Characteristics: {self.characteristics}"
 
 class Character_LoTR:
     def __init__(self, name, race, occupation, status):
@@ -190,8 +190,9 @@ class Character_LoTR:
         self.occupation = occupation
         self.status = status
     
-    def describe(self):
-        return f"Name: {self.name}, Race: {self.race}, Occupation: {self.occupation}, Status: {self.status}"
+    def introduce(self):
+        return f"Name: {self.name}, Race: {self.race.name}, Occupation: {self.occupation}, Status: {self.status}"
+
 
 
 ##################################################################################################
