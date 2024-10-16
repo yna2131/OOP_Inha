@@ -175,8 +175,8 @@ class Jedi:
 
 ######## Problem 13: The Lord of the Rings #######################################################
 class Race:
-    def __init__(self, race, homeland, characteristics):
-        self.race = race
+    def __init__(self, name, homeland, characteristics):
+        self.name = name
         self.homeland = homeland
         self.characteristics = characteristics
     
@@ -192,8 +192,6 @@ class Character_LoTR:
     
     def introduce(self):
         return f"Name: {self.name}, Race: {self.race.name}, Occupation: {self.occupation}, Status: {self.status}"
-
-
 
 ##################################################################################################
 
