@@ -115,7 +115,20 @@ class Jedi:
 ##################################################################################################
 
 ######## Problem 16: Naruto ######################################################################
+class Shinobi:
+    def __init__(self, name, rank, chakra, missions_completed):
+        self.name = name
+        self.rank = rank
+        self.chakra = chakra
+        self.missions_completed = missions_completed
+        
+    def complete_mission(self, chakra_used):
+        self.chakra -= chakra_used
+        self.missions_completed += 1
 
+    def recover_chakra(self, amount):
+        self.chakra += amount
+        
 ##################################################################################################
 
 ######## Problem 17: Doctor Who ##################################################################
