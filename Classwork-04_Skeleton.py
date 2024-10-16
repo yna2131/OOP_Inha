@@ -67,7 +67,26 @@ class Wizard:
 ##################################################################################################
 
 ######## Problem 11: Game of Thrones #############################################################
-
+class House:
+    def __init__(self, name, sigil, words, region):
+        self.name = name
+        self.sigil = sigil
+        self.words = words
+        self.region = region
+        
+    def describe(self):
+        return f"House: {self.name}, Sigil: {self.sigil}, Words: {self.words}, Region: {self.region}"
+    
+class Character_GoT:
+    def __init__(self, name, title, house, status):
+        self.name = name
+        self.title = title
+        self.house = house
+        self.status = status
+        
+    def introduce(self):
+        return f"Name: {self.name}, Title: {self.title}, House: {self.house}, Status: {self.status}"
+    
 ##################################################################################################
 
 ######## Problem 12: Star Wars ###################################################################
