@@ -240,19 +240,71 @@ class Shinobi:
 ##################################################################################################
 
 ######## Problem 17: Doctor Who ##################################################################
+class TimeLord:
+    def __init__(self, name, regenerations_left, current_age, gadgets):
+        self.name = name
+        self.regenerations_left = regenerations_left
+        self.current_age = current_age
+        self.gadgets = gadgets
 
+    def regenerate(self):
+        self.current_age = 0
+        self.regenerations_left -= 1
+
+    def use_gadget(self, gadget_name):
+        return f"Using gadget: {gadget_name}"
 ##################################################################################################
 
 ######## Problem 18: Star Trek ###################################################################
+class Starship:
+    def __init__(self, name, crew_size, warp_speed, current_location):
+        self.name = name
+        self.crew_size = crew_size
+        self.warp_speed = warp_speed
+        self.current_location = current_location
 
+    def travel(self, distance):
+        return f"Travel time: {distance / self.warp_speed} hours"
+        
+    def recruit_crew(self, number):
+        self.crew_size += number
 ##################################################################################################
 
 ######## Problem 19: Transformers ###############################################################
+class Transformer:
+    def __init__(self, name, form, strength, energy):
+        self.name = name
+        self.form = form
+        self.strength = strength
+        self.energy = energy
 
+    def transform(self):
+        self.form = "Vehicle"
+
+    def battle(self, enemy_strength):
+        if self.strength + self.energy > enemy_strength:
+            return "Win"
+        else:
+            return "Defeat"
 ##################################################################################################
 
 ######## Problem 20: The Matrix ##################################################################
+class MatrixCharacter:
+    def __init__(self, name, skills, matrix_level, health):
+        self.name = name
+        self.skills = skills
+        self.matrix_level = matrix_level
+        self.health = health
 
+    def learn_skill(self, skill):
+        self.skills.append(skill)
+
+    def take_damage(self, amount):
+        self.health -= amount
+        if self.health <= 0:
+            return "Neo is dead"
+        else:
+            return "Neo is alive"
 ##################################################################################################
 ########################## -Your Code Ends Here- #################################################
 ##################################################################################################
