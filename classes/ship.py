@@ -1,7 +1,7 @@
 class Ship:
     def __init__(self, name, cargo_space, fuel, weapons, health):
         self.name = name
-        self.cargo_space = cargo_space
+        self.cargo_space = cargo_space # this would be better to define like self.inventory = Inventory(cargo_space) maybe
         self.fuel = fuel
         self.weapons = weapons
         self.health = health
