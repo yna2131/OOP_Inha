@@ -20,3 +20,5 @@ class CargoShip(Ship):
 
 class FighterShip(Ship):
     pass
+
+# Maybe we could add a dictionary to track the items stored in the ship; like key being the item name, and the value being the quantity of the item
