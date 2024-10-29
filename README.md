@@ -13,7 +13,7 @@
 
 ## Description
 
-Players travel between planets to buy and sell gods, upgrade their ship, and engage in psace combiat
+Players travel between planets to buy and sell goods, upgrade their ship, and engage in space combat
 
 ## OOP Focus
 
