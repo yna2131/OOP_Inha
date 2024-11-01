@@ -8,6 +8,6 @@ class Player:
         pass
     
     def fight(self):
-        pass
+        print("HI")
     
 # Brief information and actions of users
