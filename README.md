@@ -2,14 +2,14 @@
 
 ### Group H
 
-| Name     | Student ID |
-| -------- | ---------- |
-| Member 1 | 12345678   |
-| Member 2 | 12345678   |
-| Member 3 | 12345678   |
-| Member 4 | 12345678   |
-| Member 5 | 12345678   |
-| Member 6 | 12345678   |
+| Name                            | Student ID |
+| ------------------------------- | ---------- |
+| Maya Botagoz                    | 12345678   |
+| Kim Dessan                      | 12345678   |
+| Adilbekov Adilbek Murodalievich | 12345678   |
+| Tohirov Komronbek Muzaffar Ugli | 12345678   |
+| Klechshev Timur                 | 12345678   |
+| Yuna Chung                      | 12345678   |
 
 ## Description
 
