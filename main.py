@@ -6,6 +6,8 @@ from classes.planet import Planet
 from classes.inventory import Inventory
 from classes.pirate import Pirate
 from classes.player import Player
+from tutorial import tutorial
+from game import run
 
 # main.py
 # Probably set default information
@@ -39,7 +41,8 @@ def game_start():
     ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣌⠑⠦⢄⡀⠀⠀⠀⠀⠈⢿⣿⣿⠃⠀⠀⠀⠀⠀⣀⠤⠚⢁⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃
     ⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠈⠑⠒⠤⠤⣀⣀⣛⣁⣀⡤⠤⠐⠚⠉⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀
     ⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠲⢤⣀⡠⠔⠚⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀""")
+    ⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠲⢤⣀⡠⠔⠚⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀
+    """)
     time.sleep(2)
     os.system('cls')
     while True:
@@ -61,6 +64,26 @@ def game_start():
     print(f"Welcome, {player.name}! You are now captin of the ship {ship.name}. Let's start our journey!")
     time.sleep(2)
     os.system('cls')
+    
+    while(1):
+        print("""Insert the number of the option you want to select, and press ENTER
+                    1. START GAME
+                    2. HOW TO PLAY
+                    3. EXIT\n""")
+        command = input(">>")
+        if command == '1':
+            run()
+        elif command == '2':
+            tutorial()
+            os.system('cls')
+        elif command == '3':
+            print("Thank you for playing")
+            time.sleep(1.5)
+            break
+        else:
+            os.system('cls')
+            print("Invalid option")
+            print()
     # print("""
     #     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⠄⠀⠀⠀⠀⠀⠀⠀⠐⠂⠤⢄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠠⠤⢄⣀⠀⠀⠀⠀⠀
     # ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠤⠒⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⢦⡀⠀⠀
