@@ -36,3 +36,26 @@ def choice(scene, status=0):
                             3. Planet 3
                             4. Planet 4
                             5. Planet 5 \n""")
+
+    
+def run():        
+    os.system('cls')
+    while True:
+        player_name = input("Enter your player's name: ").strip()
+        if player_name:
+            break
+        print("Player name can't be empty. Please enter a valid name")
+
+    while True:
+        ship_name = input("Enter your ship's name: ").strip()
+        if ship_name:
+            break
+        print("Ship name can't be empty. Please enter a valid name")
+        
+    ship = Ship(name=ship_name, cargo_space=100, fuel=500, weapons=10, health=100)
+
+    player = Player(name=player_name, money=1000, ship=ship)
+
+    print(f"Welcome, {player.name}! You are now captin of the ship {ship.name}. Let's start our journey!")
+    time.sleep(2)
+    os.system('cls')

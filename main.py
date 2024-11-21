@@ -16,6 +16,7 @@ from game import run
 def game_start():
     os.system('cls')
     print("Hi stranger, welcome to Space Galaxy\n")
+    time.sleep(0.5)
     print("""
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⠄⠀⠀⠀⠀⠀⠀⠀⠐⠂⠤⢄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠠⠤⢄⣀⠀⠀⠀⠀⠀
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠤⠒⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⢦⡀⠀⠀
@@ -43,33 +44,14 @@ def game_start():
     ⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀
     ⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠲⢤⣀⡠⠔⠚⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀
     """)
-    time.sleep(2)
-    os.system('cls')
-    while True:
-        player_name = input("Enter your player's name: ").strip()
-        if player_name:
-            break
-        print("Player name can't be empty. Please enter a valid name")
-
-    while True:
-        ship_name = input("Enter your ship's name: ").strip()
-        if ship_name:
-            break
-        print("Ship name can't be empty. Please enter a valid name")
-        
-    ship = Ship(name=ship_name, cargo_space=100, fuel=500, weapons=10, health=100)
-
-    player = Player(name=player_name, money=1000, ship=ship)
-
-    print(f"Welcome, {player.name}! You are now captin of the ship {ship.name}. Let's start our journey!")
-    time.sleep(2)
+    time.sleep(1.5)
     os.system('cls')
     
-    while(1):
-        print("""Insert the number of the option you want to select, and press ENTER
-                    1. START GAME
-                    2. HOW TO PLAY
-                    3. EXIT\n""")
+    while (1):
+        print("Select the option you want , and press ENTER")
+        print("1. START GAME")
+        print("2. HOW TO PLAY")
+        print("3. EXIT")
         command = input(">>")
         if command == '1':
             run()
@@ -83,33 +65,9 @@ def game_start():
         else:
             os.system('cls')
             print("Invalid option")
+            time.sleep(1.5)
+            os.system('cls')
             print()
-    # print("""
-    #     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⠄⠀⠀⠀⠀⠀⠀⠀⠐⠂⠤⢄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠠⠤⢄⣀⠀⠀⠀⠀⠀
-    # ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠤⠒⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⢦⡀⠀⠀
-    # ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠊⠁⠀⠀⠀⠀⣀⣠⣤⣤⣶⣶⣶⣶⣶⣦⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⡄⠀
-    # ⠀⠀⠀⠀⠀⠀⠀⠀⢀⠔⠁⠀⠀⠀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⠀
-    # ⠀⡀⠀⠀⠀⠀⢀⡴⠁⠀⠀⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀
-    # ⠀⢰⠀⠀⠀⢠⠎⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⡸⠀
-    # ⠀⠸⡀⠀⣠⠃⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⡇⠀
-    # ⠀⠀⡇⢠⠃⠀⠀⢀⣾⣿⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⡿⠿⠛⠛⡟⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⢠⠃⠀
-    # ⠀⠀⢃⡏⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⡇⠀⠀⠀⠀⠈⠙⢿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣷⡀⠀⠀⠀⢸⠀⠀
-    # ⠀⠀⢸⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⢠⣇⠀⠀⠀⠀⡇⠀⠀⠀⠀⣰⡆⠀⠙⢿⣿⣿⣿⠿⣿⣿⣿⣿⣇⠀⠀⠀⡇⠀⠀
-    # ⠀⠀⢸⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⢠⣿⡯⣆⠀⠀⠀⡇⠉⠀⠀⢰⣿⢹⡄⠀⠘⢿⣿⣧⣵⣼⣿⣿⣿⣿⠀⠀⠀⢃⠀⠀
-    # ⠀⠀⢸⠀⠀⠀⣿⣿⣟⣿⣿⣿⣿⣿⣏⠀⠀⢸⣿⡇⢸⠀⢀⣤⣷⣄⠀⠀⢸⣿⠀⡇⣀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⢸⠀⠀
-    # ⠀⠀⢸⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⡏⠀⠀⢸⣿⡇⣸⣶⡟⡿⣿⢢⠙⠲⠾⣿⡀⡇⠋⠐⠀⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⡌⠀⠀
-    # ⢸⡄⠸⠀⠀⠀⠸⣿⡿⠋⠉⠙⢿⣿⣇⣠⣤⢼⡋⢃⡴⠋⣰⠁⢿⠈⣆⠀⠀⠀⠉⠳⠤⣀⣸⣿⡿⢛⡏⠉⠻⣿⡇⠀⠀⠀⡇⢀⡇
-    # ⢸⣿⡄⣇⠀⠀⠀⢻⡁⠀⣀⡤⠞⡫⠛⢑⠖⡭⠂⠉⠀⠀⠃⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠾⢄⡀⠀⡿⠁⠀⠀⢰⢁⣾⡇
-    # ⢸⣿⣿⣼⡄⠀⠀⠀⢣⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣾⣶⣶⣶⣶⣿⣷⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⠿⣳⠁⠀⠀⠀⣎⣾⣿⡇
-    # ⢸⣿⣿⣿⣷⡀⠀⠀⠀⠳⡀⠀⠀⠈⠉⠉⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⢯⡉⠁⠀⢀⡜⠁⠀⠀⠀⣼⣿⣿⣿⡇
-    # ⢸⣿⣿⣿⣿⣷⣄⠀⠀⠀⠘⢦⡀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠉⠀⠀⠀⠙⢢⡤⠋⠀⠀⠀⢀⣾⣿⣿⣿⣿⡇
-    # ⢸⣿⣿⣿⣿⣿⣿⡷⣄⠀⠀⠀⠙⠢⣀⠀⠀⠀⠀⠀⠈⠹⣿⣿⣿⣿⣿⡏⠁⠀⠀⠀⠀⠀⣀⠴⠋⠀⠀⠀⢀⢴⣿⣿⣿⣿⣿⣿⡇
-    # ⢸⣿⣿⣿⣿⣿⣿⣿⣮⡳⣄⠀⠀⠀⠈⠑⠢⢄⣀⠀⠀⠀⣿⣿⣿⡇⢠⠃⠀⠀⣀⡠⠔⠊⠁⠀⠀⠀⣀⠔⣹⣿⣿⣿⣿⣿⣿⣿⡇
-    # ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡑⠦⣀⠀⠀⠀⠀⠈⠉⠑⠒⢻⣿⣿⡇⡾⠒⠚⠉⠁⠀⠀⠀⠀⢀⡤⠚⣡⣾⣿⣿⣿⣿⣿⣿⣿⣿⡇
-    # ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣌⠑⠦⢄⡀⠀⠀⠀⠀⠈⢿⣿⣿⠃⠀⠀⠀⠀⠀⣀⠤⠚⢁⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃
-    # ⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠈⠑⠒⠤⠤⣀⣀⣛⣁⣀⡤⠤⠐⠚⠉⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀
-    # ⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀
-    # ⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠲⢤⣀⡠⠔⠚⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀""")
     
 if __name__ == "__main__":
     game_start()
