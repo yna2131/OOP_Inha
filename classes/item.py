@@ -1,16 +1,10 @@
 class Item:
-    """
-    Base class for all items in the game.
-    """
     def __init__(self, name, description, price):
         self.name = name
         self.description = description
         self.price = price
 
     def get_details(self):
-        """
-        Returns the details of the item as a dictionary.
-        """
         return {
             "name": self.name,
             "description": self.description,
@@ -19,9 +13,6 @@ class Item:
 
 
 class Medicine(Item):
-    """
-    Subclass for medicine items.
-    """
     def __init__(self, name, description, price, healing):
         super().__init__(name, description, price)
         self.healing = healing
@@ -33,9 +24,6 @@ class Medicine(Item):
 
 
 class Clothing(Item):
-    """
-    Subclass for clothing items.
-    """
     def __init__(self, name, description, price, defense_bonus):
         super().__init__(name, description, price)
         self.defense_bonus = defense_bonus
@@ -47,9 +35,6 @@ class Clothing(Item):
 
 
 class Food(Item):
-    """
-    Subclass for food and provisions.
-    """
     def __init__(self, name, description, price, strength_boost):
         super().__init__(name, description, price)
         self.strength_boost = strength_boost
@@ -61,9 +46,6 @@ class Food(Item):
 
 
 class PetCompanion(Item):
-    """
-    Subclass for pet companions.
-    """
     def __init__(self, name, description, price, effect):
         super().__init__(name, description, price)
         self.effect = effect
