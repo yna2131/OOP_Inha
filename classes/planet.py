@@ -1,5 +1,5 @@
-from pirate import Pirate
-from item import Medicine, Clothing, Food, PetCompanion
+from .pirate import Pirate
+from .item import Medicine, Clothing, Food, PetCompanion
 class Planet:
     def __init__(self, name, level_req, takes_fuel, takes_time, description):
         self.name = name
@@ -17,19 +17,11 @@ class Planet:
         else:
             return f"Access Denied: Level {self.level_req} required to visit {self.name}."
         
-    def sell(self):
-        pass
-    
-    def buy(self):
-        pass
-    
-    def display(self):
-        pass
-
 class Trading_Planet(Planet):
     def __init__(self, name, level_req, takes_fuel, takes_time, inventory, description):
         super().__init__(name, level_req, takes_fuel, takes_time, description)
         self.inventory = inventory
+        
     def display(self):
         inventory_details = "\n".join(
             f"{i+1}. {item.get_details()['name']} - {item.get_details()['description']} "
@@ -110,6 +102,7 @@ class Fight_Planet(Planet):
         if 0 <= index < len(self.regions):
             return self.regions[index]
         return None
+    
     def display_pirates(self, region_index):
         region = self.get_region(region_index)
         if not region:

@@ -1,11 +1,5 @@
 import time
-import random
 import os
-from classes.ship import Ship
-from classes.planet import Planet
-from classes.inventory import Inventory
-from classes.pirate import Pirate
-from classes.player import Player
 from tutorial import tutorial
 from game import run
 
