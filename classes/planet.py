@@ -1,5 +1,5 @@
-from .pirate import Pirate
-from .item import Medicine, Clothing, Food, PetCompanion
+from pirate import Pirate
+from item import Medicine, Clothing, Food, PetCompanion
 class Planet:
     def __init__(self, name, level_req, takes_fuel, takes_time, description):
         self.name = name
