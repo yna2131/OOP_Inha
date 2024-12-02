@@ -1,15 +1,16 @@
 class Pirate:
-    def __init__(self, name, pirate_type, level, weapons, health):
+    def __init__(self, name, pirate_type, level, weapons, health, reward):
         self.name = name
         self.pirate_type = pirate_type
         self.level = level
-        self.weapons = weapons  # List of (weapon_name, damage)
+        self.weapons = weapons
         self.health = health
+        self.reward = reward
 
     def attack(self):
         if not self.weapons:
             return {"action": "attack", "weapon": "No weapon", "damage": 0}
-        weapon = self.weapons[0]  # Choose the first weapon for simplicity
+        weapon = self.weapons[0]
         return {"action": "attack", "weapon": weapon[0], "damage": weapon[1]}
 
     def take_damage(self, damage):

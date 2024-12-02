@@ -54,29 +54,3 @@ class PetCompanion(Item):
         details = super().get_details()
         details["effect"] = self.effect
         return details
-
-
-# Example Usage
-if __name__ == "__main__":
-    # Creating Medicine Items
-    bandages = Medicine("Bandages", "Basic wound wraps for small injuries.", 10, 10)
-    first_aid_kit = Medicine("First Aid Kit", "A compact kit with essential tools for healing.", 50, 20)
-
-    # Creating Clothing Items
-    space_suit = Clothing("Basic Space Suit", "Standard-issue, no frills.", 50, 5)
-    thermal_cloak = Clothing("Thermal Insulated Cloak", "Keeps you safe in harsh environments.", 200, 15)
-
-    # Creating Food Items
-    protein_bar = Food("Protein Bar", "Compact and nutritious.", 10, 5)
-    exotic_cuisine = Food("Exotic Alien Cuisine", "Rare dishes from distant worlds.", 150, 30)
-
-    # Creating Pet Companion Items
-    astro_kitten = PetCompanion("Astro-Kitten", "Cute companion for morale.", 30, "+2 morale boost")
-    quantum_hound = PetCompanion("Quantum Hound", "Tracks rare loot during exploration.", 700, "+15% rare loot detection")
-
-    # Displaying Item Details
-    print(bandages.get_details())
-    print(space_suit.get_details())
-    print(protein_bar.get_details())
-    print(astro_kitten.get_details())
-
