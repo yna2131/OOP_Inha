@@ -1,20 +1,22 @@
 class Item:
-    def __init__(self, name, description, price):
+    def __init__(self, name, description, price, healing=0):
         self.name = name
         self.description = description
         self.price = price
+        self.healing = healing
 
     def get_details(self):
         return {
             "name": self.name,
             "description": self.description,
-            "price": self.price
+            "price": self.price,
+            "healing": self.healing
         }
 
 
 class Medicine(Item):
     def __init__(self, name, description, price, healing):
-        super().__init__(name, description, price)
+        super().__init__(name, description, price, healing)
         self.healing = healing
 
     def get_details(self):

@@ -182,9 +182,26 @@ def explore_planet(player, planet_num):
 
         if trade_action == "1":
             item_index = int(input("Enter item number to buy: ")) - 1
-            quantity = int(input("Enter quantity: "))
+            while True:
+                try:
+                    quantity = int(input("Enter quantity: "))
+                    if quantity <= 0:
+                        print("Quantity must be greater than zero.")
+                    else:
+                        break
+                except ValueError:
+                    print("Invalid input. Please enter a valid number.")
+
             print(planet.buy(player, item_index, quantity))
         elif trade_action == "2":
+            print("\nYour inventory:")
+            for idx, (item_name, details) in enumerate(player.inventory.items(), 1):
+                item_price = details.get(
+                    "price",
+                )
+                print(
+                    f"{idx}. {item_name} - Quantity: {details['quantity']}, Price: {details['price']} credits each"
+                )
             item_name = input("Enter item name to sell: ")
             quantity = int(input("Enter quantity: "))
             print(planet.sell(player, item_name, quantity))
@@ -256,51 +273,69 @@ def run():
 
             for ship in player.ships.values():
                 if hasattr(ship, "fuel"):
-                    ship.fuel = ship.max_fuel
+                    print(ship.recover())
 
-            print(
-                "You decide to rest. Fuel has been fully recovered for all applicable ships!"
-            )
-            print(f"One day has passed. Total days passed: {player.days_passed}")
-
-            print(f"Remaining fuel: {player.ships['FighterShip'].fuel}\n")
-
-            if player.health < 100:
-                print("\nYou have lost some health.")
-                print("Health recovery items available in your inventory:")
-                recovery_items = {
-                    name: details
-                    for name, details in player.inventory.items()
-                    if "healing" in details
-                }
-
-                if not recovery_items:
-                    print("No recovery items available. Consider buying some.")
-                else:
-                    while player.health < 100:
-                        for idx, (name, details) in enumerate(
-                            recovery_items.items(), 1
-                        ):
+            fighter_ship = player.ships["FighterShip"]
+            if fighter_ship.health < fighter_ship.max_health:
+                print(
+                    f"{fighter_ship.name} health: {fighter_ship.health}/{fighter_ship.max_health}"
+                )
+                while fighter_ship.health < fighter_ship.max_health:
+                    use_healing = input(
+                        "Do you want to use items to recover health? (y/n): "
+                    ).lower()
+                    if use_healing == "y":
+                        if not player.inventory:
                             print(
-                                f"{idx}. {name} - Healing: {details['healing']} (x{details['quantity']})"
+                                "You have no items in your inventory to recover health."
                             )
-                        print("Type 'exit' to stop using recovery items.")
+                            break
 
-                        item_choice = input(
-                            "\nEnter the name of the item you want to use: "
+                        print("\nAvailable healing items:")
+                        for idx, (item_name, details) in enumerate(
+                            player.inventory.items(), 1
+                        ):
+                            healing_value = details.get("healing", 0)
+                            if healing_value > 0:
+                                print(
+                                    f"{idx}. {item_name} (Healing: {healing_value}, Quantity: {details['quantity']})"
+                                )
+
+                        item_name = input(
+                            "Enter the item name to use for recovery: "
                         ).strip()
-                        if item_choice.lower() == "exit":
-                            break
-                        recovery_result = player.recover_health(item_choice)
-                        print(recovery_result)
+                        if item_name not in player.inventory:
+                            print("You don't have that item in your inventory.")
+                            continue
 
-                        if player.health == 100:
-                            print("Your health is now fully recovered!")
-                            break
+                        healing_value = player.inventory[item_name].get("healing", 0)
+                        if (
+                            healing_value > 0
+                            and player.inventory[item_name]["quantity"] > 0
+                        ):
+                            fighter_ship.health = min(
+                                fighter_ship.health + healing_value,
+                                fighter_ship.max_health,
+                            )
+                            player.remove_from_inventory(item_name, 1)
+                            print(
+                                f"You used {item_name} and restored {healing_value} health. "
+                                f"Current health: {fighter_ship.health}/{fighter_ship.max_health}"
+                            )
+                        else:
+                            print(
+                                "That item cannot be used for healing or is not available."
+                            )
+                    elif use_healing == "n":
+                        print("You chose not to recover health.")
+                        break
+                    else:
+                        print("Invalid choice.")
 
+            print(f"One day has passed. Total days passed: {player.days_passed}")
             time.sleep(2)
             clear_screen()
-            
+
         elif cmd == "2":
             print("You decide to travel.")
             clear_screen()
@@ -321,6 +356,7 @@ def run():
         if continue_game.lower() != "y":
             display_summary(player)
             break
+
         time.sleep(2)
         clear_screen()
 

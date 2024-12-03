@@ -78,6 +78,5 @@ class FighterShip(Ship):
         return f"{self.name} took {damage} damage. Health: {self.health}/{self.max_health}."
 
     def recover(self):
-        self.health = self.max_health
         self.fuel = self.max_fuel
         return f"{self.name} is fully restored!"

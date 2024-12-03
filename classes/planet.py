@@ -1,5 +1,7 @@
 from classes.pirate import Pirate
 from classes.item import Medicine, Clothing, Food, PetCompanion
+
+
 class Planet:
     def __init__(self, name, level_req, takes_fuel, takes_time, description, inventory):
         self.name = name
@@ -11,10 +13,10 @@ class Planet:
 
     def display_description(self):
         return f"Welcome to {self.name}! - {self.description}"
-    
+
     def check_access(self, player_level):
         return player_level >= self.level_req
-        
+
     def display(self):
         inventory_details = "\n".join(
             f"{i+1}. {item.get_details()['name']} - {item.get_details()['description']} "
@@ -24,21 +26,20 @@ class Planet:
         return f"Items available on {self.name}:\n{inventory_details}"
 
     def sell(self, player, item_name, quantity):
-        for item in self.inventory:
-            if item.name == item_name:
-                selling_price = (item.price // 2) * quantity
-                if player.has_item(item_name, quantity):
-                    player.remove_from_inventory(item_name, quantity)
-                    player.credits += selling_price
-                    return (
-                        f"Transaction Successful!\n"
-                        f"You sold {quantity} {item_name} for {selling_price} credits.\n"
-                        f"New Credit Balance: {player.credits}."
-                    )
-                return f"You do not have {quantity} {item_name} to sell."
-        return f"Item '{item_name}' is not accepted on this planet."
-    
-    
+        if not player.has_item(item_name, quantity):
+            return f"You do not have {quantity} {item_name} to sell."
+
+        item_details = player.inventory.get(item_name)
+        selling_price = (item_details["price"] // 2) * quantity
+        player.remove_from_inventory(item_name, quantity)
+        player.credits += selling_price
+
+        return (
+            f"Transaction Successful!\n"
+            f"You sold {quantity} {item_name} for {selling_price} credits.\n"
+            f"New Credit Balance: {player.credits}."
+        )
+
     def buy(self, player, item_index, quantity):
         if not (0 <= item_index < len(self.inventory)):
             return "Invalid item selection."
@@ -50,12 +51,15 @@ class Planet:
             return f"Insufficient credits. You need {total_cost - player.credits} more credits."
 
         player.credits -= total_cost
-        player.add_to_inventory(item.name, quantity)
+
+        healing = getattr(item, "healing", 0)
+        player.add_to_inventory(item.name, quantity, item.price, healing=healing)
         return (
             f"Transaction Successful!\n"
             f"You purchased {quantity} {item.name} for {total_cost} credits.\n"
             f"Remaining Credits: {player.credits}."
         )
+
 
 mercantara_inventory = [
     Medicine("Bandages", "Basic wound wraps for small injuries.", 10, 10),
@@ -65,15 +69,33 @@ mercantara_inventory = [
 ]
 
 barteron_inventory = [
-    Medicine("First Aid Kit", "A compact kit with essential tools for healing.", 50, 20),
+    Medicine(
+        "First Aid Kit", "A compact kit with essential tools for healing.", 50, 20
+    ),
     Food("Hydroponic Fruit Pack", "Fresh fruits grown in hydroponic systems.", 50, 15),
-    Clothing("Thermal Insulated Cloak", "Keeps you safe in harsh environments.", 200, 15),
-    PetCompanion("Quantum Hound", "Tracks rare loot during exploration.", 700, "+15% rare loot detection"),
+    Clothing(
+        "Thermal Insulated Cloak", "Keeps you safe in harsh environments.", 200, 15
+    ),
+    PetCompanion(
+        "Quantum Hound",
+        "Tracks rare loot during exploration.",
+        700,
+        "+15% rare loot detection",
+    ),
 ]
 
 voltrade_inventory = [
-    Medicine("Regeneration Serum", "High-tech serum that regenerates cellular damage.", 200, 50),
+    Medicine(
+        "Regeneration Serum",
+        "High-tech serum that regenerates cellular damage.",
+        200,
+        50,
+    ),
     Food("Exotic Alien Cuisine", "Rare dishes from distant worlds.", 150, 30),
-    Clothing("Reactive Defense Cloak", "Automatically deflects small attacks.", 800, 35),
-    PetCompanion("Void Hawk", "Provides aerial combat support.", 900, "+20 damage in combat"),
+    Clothing(
+        "Reactive Defense Cloak", "Automatically deflects small attacks.", 800, 35
+    ),
+    PetCompanion(
+        "Void Hawk", "Provides aerial combat support.", 900, "+20 damage in combat"
+    ),
 ]
