@@ -9,7 +9,7 @@ class Player:
         self.health = 100
         self.days_passed = 0
         self.inventory = {
-            "Basic First Aid Kit": {"healing": 10, "price": 50, "quantity": 1},
+            "Basic First Aid Kit": {"healing": 50, "price": 50, "quantity": 1},
         }
         self.ships = {
             "CargoShip": CargoShip(name="Basic Inventory", cargo_space=100),

@@ -30,7 +30,7 @@ def tutorial():
     ⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠈⠑⠒⠤⠤⣀⣀⣛⣁⣀⡤⠤⠐⠚⠉⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀
     ⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀
     ⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠲⢤⣀⡠⠔⠚⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀
-    Welcome to Space Traders
+    Welcome to Galactic Vendetta
     """)
     time.sleep(2)
     os.system("cls")
@@ -61,45 +61,85 @@ def tutorial():
     ⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠈⠑⠒⠤⠤⣀⣀⣛⣁⣀⡤⠤⠐⠚⠉⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀
     ⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀
     ⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠲⢤⣀⡠⠔⠚⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀
-    You can trade resources, upgrade your ship, and battle space pirates
+    You can trade resources  and battle space pirates
     """)
     time.sleep(2)
+    os.system('cls')
     print("Are you ready to play?")
     time.sleep(2)
     os.system('cls')
     print("At the start of the game, you have two ships.")
-    print("\n")
     time.sleep(2)
-    print("Cargo Ship: high cargo space, no ability to fight")
     print("\n")
+    print("Cargo Ship: high cargo space, no ability to fight")
     time.sleep(2)
     print("Fighter Ship: strong weapons, no inventory included")
     time.sleep(2)
     os.system('cls')
     print("There are different planets you can visit")
     time.sleep(2)
-    print("Choose a destination. Each trip uses fuel based on distance")
+    print("Choose a destination, and remember to ensure you have enough fuel before traveling.")
+    time.sleep(2.5)
+    print("You use fuel for your trips and fights")
     time.sleep(2)
-    print("Ensure you have enough fuel before traveling. Visit space stations to refuel")
-    time.sleep(2)
+    print("You won't be able to continue if there is no more fuel left.")
+    time.sleep(2.5)
     os.system('cls')
     print("Each planet offers unique goods and prices")
     time.sleep(2)
-    print("Some planets specialize in rare resources")
-    time.sleep(2)
-    print("Visit the trading hub to:")
-    time.sleep(2)
     print("\n")
+    print("Visit the planets to:")
+    time.sleep(2)
     print("Buy items")
     time.sleep(2)
-    print("\n")
     print("Sell items")
     time.sleep(2)
+    print("Fight against pirates!")
     os.system('cls')
-    print("Plan your routes carefully")
+    print("Plan your journey carefully")
     os.system('cls')
-    print("Earn credits through trading or combat and upgrade your ship at shipyards")
-    time.sleep()
+    print("Earn credits through trading or combat and win the game!")
+    time.sleep(2.5)
+    os.system('cls')
+    print("""
+          
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⠄⠀⠀⠀⠀⠀⠀⠀⠐⠂⠤⢄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠠⠤⢄⣀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠤⠒⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⢦⡀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠊⠁⠀⠀⠀⠀⣀⣠⣤⣤⣶⣶⣶⣶⣶⣦⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⡄⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⢀⠔⠁⠀⠀⠀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⠀
+    ⠀⡀⠀⠀⠀⠀⢀⡴⠁⠀⠀⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀
+    ⠀⢰⠀⠀⠀⢠⠎⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⡸⠀
+    ⠀⠸⡀⠀⣠⠃⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⡇⠀
+    ⠀⠀⡇⢠⠃⠀⠀⢀⣾⣿⣿⣿⣿⣿⠛⣿⣿⣿⣿⣿⡿⠿⠛⠛⡟⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⢠⠃⠀
+    ⠀⠀⢃⡏⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⡇⠀⠀⠀⠀⠈⠙⢿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣷⡀⠀⠀⠀⢸⠀⠀
+    ⠀⠀⢸⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⢠⣇⠀⠀⠀⠀⡇⠀⠀⠀⠀⣰⡆⠀⠙⢿⣿⣿⣿⠿⣿⣿⣿⣿⣇⠀⠀⠀⡇⠀⠀
+    ⠀⠀⢸⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⢠⣿⡯⣆⠀⠀⠀⡇⠉⠀⠀⢰⣿⢹⡄⠀⠘⢿⣿⣧⣵⣼⣿⣿⣿⣿⠀⠀⠀⢃⠀⠀
+    ⠀⠀⢸⠀⠀⠀⣿⣿⣟⣿⣿⣿⣿⣿⣏⠀⠀⢸⣿⡇⢸⠀⢀⣤⣷⣄⠀⠀⢸⣿⠀⡇⣀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⢸⠀⠀
+    ⠀⠀⢸⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⡏⠀⠀⢸⣿⡇⣸⣶⡟⡿⣿⢢⠙⠲⠾⣿⡀⡇⠋⠐⠀⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⡌⠀⠀
+    ⢸⡄⠸⠀⠀⠀⠸⣿⡿⠋⠉⠙⢿⣿⣇⣠⣤⢼⡋⢃⡴⠋⣰⠁⢿⠈⣆⠀⠀⠀⠉⠳⠤⣀⣸⣿⡿⢛⡏⠉⠻⣿⡇⠀⠀⠀⡇⢀⡇
+    ⢸⣿⡄⣇⠀⠀⠀⢻⡁⠀⣀⡤⠞⡫⠛⢑⠖⡭⠂⠉⠀⠀⠃⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠾⢄⡀⠀⡿⠁⠀⠀⢰⢁⣾⡇
+    ⢸⣿⣿⣼⡄⠀⠀⠀⢣⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣾⣶⣶⣶⣶⣿⣷⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⠿⣳⠁⠀⠀⠀⣎⣾⣿⡇
+    ⢸⣿⣿⣿⣷⡀⠀⠀⠀⠳⡀⠀⠀⠈⠉⠉⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⢯⡉⠁⠀⢀⡜⠁⠀⠀⠀⣼⣿⣿⣿⡇
+    ⢸⣿⣿⣿⣿⣷⣄⠀⠀⠀⠘⢦⡀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠉⠀⠀⠀⠙⢢⡤⠋⠀⠀⠀⢀⣾⣿⣿⣿⣿⡇
+    ⢸⣿⣿⣿⣿⣿⣿⡷⣄⠀⠀⠀⠙⠢⣀⠀⠀⠀⠀⠀⠈⠹⣿⣿⣿⣿⣿⡏⠁⠀⠀⠀⠀⠀⣀⠴⠋⠀⠀⠀⢀⢴⣿⣿⣿⣿⣿⣿⡇
+    ⢸⣿⣿⣿⣿⣿⣿⣿⣮⡳⣄⠀⠀⠀⠈⠑⠢⢄⣀⠀⠀⠀⣿⣿⣿⡇⢠⠃⠀⠀⣀⡠⠔⠊⠁⠀⠀⠀⣀⠔⣹⣿⣿⣿⣿⣿⣿⣿⡇
+    ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡑⠦⣀⠀⠀⠀⠀⠈⠉⠑⠒⢻⣿⣿⡇⡾⠒⠚⠉⠁⠀⠀⠀⠀⢀⡤⠚⣡⣾⣿⣿⣿⣿⣿⣿⣿⣿⡇
+    ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣌⠑⠦⢄⡀⠀⠀⠀⠀⠈⢿⣿⣿⠃⠀⠀⠀⠀⠀⣀⠤⠚⢁⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃
+    ⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠈⠑⠒⠤⠤⣀⣀⣛⣁⣀⡤⠤⠐⠚⠉⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀
+    ⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠲⢤⣀⡠⠔⠚⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀
+    """)
+    time.sleep(1.5)
+    print(". . .")
+    time.sleep(1.5)
+    print(". . .")
+    time.sleep(1.5)
+    print(". . .")
+    time.sleep(1.5)
+    os.system('cls')
+    print("Good luck traveler!")
+    time.sleep(2)
+    
 
 
 
