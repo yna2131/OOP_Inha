@@ -18,10 +18,10 @@ def clear_screen():
 def start():
     print("You have received new missions.")
     time.sleep(2)
-    print("[Earn 2000 credits as quickly as possible!]")
-    time.sleep(2)
+    print("[Earn 1000 credits as quickly as possible!]")
+    time.sleep(3)
     print("There is not much choice other than to follow these strange instructions.")
-    time.sleep(2)
+    time.sleep(3)
     print("Let's survive.")
     time.sleep(2)
 
@@ -34,14 +34,14 @@ def choice(scene, prompt=None, options=None):
             return cmd
         else:
             print("Invalid choice. Please try again.")
-            time.sleep(1.5)
+            time.sleep(2)
             clear_screen()
 
 
 def encounter_pirate(player):
     if player.ships["FighterShip"].fuel <= 0:
         print("You are out of fuel and cannot fight pirates!")
-        time.sleep(2)
+        time.sleep(3)
         display_summary(player)
         exit()
 
@@ -53,7 +53,7 @@ def encounter_pirate(player):
 
     pirate = random.choice(pirate_pool)
     print(f"A pirate appears! {pirate.name} ({pirate.pirate_type}) is ready to fight!")
-    time.sleep(1)
+    time.sleep(3)
 
     fighter_ship = player.ships["FighterShip"]
 
@@ -64,7 +64,7 @@ def encounter_pirate(player):
 
         if fighter_ship.fuel <= 0:
             print("You have no fuel to continue fighting. The game ends.")
-            time.sleep(2)
+            time.sleep(3)
             display_summary(player)
             exit()
 
@@ -93,7 +93,7 @@ def encounter_pirate(player):
             print(
                 f"You earned {pirate.reward} credits! Total credits: {player.credits}"
             )
-            time.sleep(2)
+            time.sleep(4)
             clear_screen()
             return
 
@@ -105,7 +105,7 @@ def encounter_pirate(player):
 
         if fighter_ship.health <= 0:
             print(f"{fighter_ship.name} has been destroyed! Game over.")
-            time.sleep(2)
+            time.sleep(3)
             clear_screen()
             return
 
@@ -113,7 +113,7 @@ def encounter_pirate(player):
 def explore_planet(player, planet_num):
     if player.ships["FighterShip"].fuel <= 0:
         print("You are out of fuel and cannot travel to another planet!")
-        time.sleep(2)
+        time.sleep(3)
         display_summary(player)
         exit()
 
@@ -153,7 +153,7 @@ def explore_planet(player, planet_num):
 
     if player.ships["FighterShip"].fuel < planet.takes_fuel:
         print("Not enough fuel to travel to this planet!")
-        time.sleep(2)
+        time.sleep(3)
         display_summary(player)
         exit()
 
@@ -209,13 +209,13 @@ def explore_planet(player, planet_num):
     elif action == "2":
         print(f"You decide to leave {planet.name}.")
 
-    if random.random() < 0.4:
+    if random.random() < 0.8:
         encounter_pirate(player)
 
 
 def check_goal(player):
-    if player.credits >= 2000:
-        print(f"\n🎉 Congratulations, {player.name}! You've earned 2000 credits!")
+    if player.credits >= 1000:
+        print(f"\n🎉 Congratulations, {player.name}! You've earned 1000 credits!")
         print(f"Total credits earned: {player.credits}")
         print(f"Days passed: {player.days_passed}")
         print("Thank you for playing!")
@@ -226,8 +226,8 @@ def display_summary(player):
     print("\nGame Summary:")
     print(f"Total days passed: {player.days_passed}")
     print(f"Total credits earned: {player.credits}")
-    if player.credits < 2000:
-        print("You didn't achieve the goal of earning 2000 credits.")
+    if player.credits < 1000:
+        print("You didn't achieve the goal of earning 1000 credits.")
         print("Better luck next time!")
     print("Thank you for playing!")
 
