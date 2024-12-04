@@ -4,12 +4,12 @@
 
 | Name                            | Student ID |
 | ------------------------------- | ---------- |
-| Maya Botagoz                    | 12345678   |
-| Kim Dessan                      | 12345678   |
-| Adilbekov Adilbek Murodalievich | 12345678   |
-| Tohirov Komronbek Muzaffar Ugli | 12345678   |
-| Klechshev Timur                 | 12345678   |
-| Yuna Chung                      | 12345678   |
+| Maya Botagoz                    | 12220266   |
+| Kim Dessan                      | 12235608   |
+| Adilbekov Adilbek Murodalievich | 12235628   |
+| Tohirov Komronbek Muzaffar Ugli | 12235649   |
+| Klechshev Timur                 | 12235650   |
+| Yuna Chung                      | 12244668   |
 
 ## Description
 
